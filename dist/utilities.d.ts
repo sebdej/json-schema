@@ -1,0 +1,10 @@
+import { JsonValue, ResolvedJsonSchema } from "./schema";
+export type TypedJsonPointer = (string | number)[];
+export type NonTypedJsonPointer = string[];
+export declare function EncodeJsonPathComponent(value: string | number): string;
+export declare function SplitJsonPointer(value: string): NonTypedJsonPointer;
+export declare function JoinJsonPointer(value: TypedJsonPointer): string;
+export declare function SplitUriFragment(value: string): [string, string];
+export declare function RelativeJsonPointer(base: (string | number)[], pointer: (string | number)[]): (string | number)[] | null;
+export declare function ResolveJsonPointer(schema: ResolvedJsonSchema, path: TypedJsonPointer): ResolvedJsonSchema | null;
+export declare function DeepEquals(a: JsonValue, b: JsonValue): boolean;
